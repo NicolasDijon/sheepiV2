@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    {# Bloc logo Sheepi #}
+    <div class="row justify-content-center">
+        <a href="{{ path('home') }}"><img src="{{asset('img/picto/logo_sheepi.png')}}" class="img-fluid my-4" alt="Logo Sheepi"></a>
+    </div>
+    {# Div background-image #}
+    <div class="row bg">
+        <div class="col-lg-12">
+            <h2 class="text-center py-5 title_registration">Petit moment d'inscription</h2>
+        </div>
+        <div class="col-lg-4 col-md-6 mx-auto">
+            {# Formulaire d'inscription #}
+            {{ form_start(form) }}
+            <div class="form-group">
+                {{ form_label(form.userName, 'Je choisis mon pseudo') }}
+                {{ form_widget(form.userName, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.userName) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.email, 'Je renseigne mon Email') }}
+                {{ form_widget(form.email, { 'attr': { 'class': 'form-control' } }) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.password, 'Je choisis un mot de passe') }}
+                {{ form_widget(form.password, { 'attr': { 'class': 'form-control' } }) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.confirm_password, 'Je confirme mon mot de passe') }}
+                {{ form_widget(form.confirm_password, { 'attr': { 'class': 'form-control' } }) }}
+            </div>
+            <div class="custom-control custom-checkbox pt-5">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked" required>
+                <label class="custom-control-label" for="defaultUnchecked">
+                    J'accepte les <a href="{{ path('home_mentions') }}" class="lien_conditions">conditions générales d'utilisation</a>
+                </label>
+            </div>
+            <br>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultUnchecked1" required>
+                <label class="custom-control-label" for="defaultUnchecked1">
+                    J'autorise Sheepi à communiquer mon numéro de téléphone et/ou mon adresse mail au membres
+                    du site lorsqu'une prise de contact est souhaitée par les deux parties.
+                </label>
+            </div>
+            <div class="form-group py-5">
+                <button type="submit" class="btn btn-warning btn-block bloc_btn py-3">C'est parti pour la suite :)</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

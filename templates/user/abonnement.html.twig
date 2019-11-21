@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/registration.css') }}">
+{% endblock %}
+
+{% block title %}Sheepi - compte de {{ app.user.userName }}{% endblock %}
+
+{% block body %}
+
+{# Sidenav utilisateur #}
+{% if app.user %}
+{% include('user/sidenav_user.html.twig') %}
+{% endif %}
+
+<div class="main" style="background-color: #f1edf6">
+    <div class="container-fluid">
+        {# Bloc image #}
+        <div class="row">
+            <img src="{{ asset('img/fond/visuel_abonnement.jpg') }}" class="img-fluid" alt="Photo abonnement">
+        </div>
+        {# Bloc forfaits #}
+        <div class="row no-padding" style="background-color: white">
+            <div class="col-lg-12">
+                <h3 class="text-center py-4 titre_abonnement">Abonnement</h3>
+            </div>
+            <div class="col-lg-12 mb-4">
+                <p class="text-center">
+                    Abonnement actuel : <span class="info_abonnement">Forfait 3 mois</span><br>
+                    Coût du forfait : <span class="info_abonnement">19€/mois</span><br>
+                    Temps restant : <span class="info_abonnement">48 jours</span><br>
+                    Date de souscription : <span class="info_abonnement">14 octobre 2019</span>
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center my-4">
+            <div class="card col-lg-3 my-3 mx-2">
+                <h4 class="text-center my-4 titre_abonnement">FORFAIT <strong>3 MOIS</strong></h4>
+                <img class="mx-auto" src="{{ asset('img/picto/picto_sheepi_3_mois.svg') }}" alt="Picto abonnement 3 mois" width="110px">
+                <div class="card-body text-center">
+                    <h4 class="card-title prix_abonnement"><span class="font-weight-bold">19 €</span><span class="span_mois"> mois</span></h4>
+                    <p class="card-text">Tout indiqué pour tester Sheepi :)</p>
+                    <a href="#" class="btn btn-warning btn-block">Ok, je prends !</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 my-3 mx-2 background_card">
+                <h4 class="text-center my-4 titre_abonnement_white">FORFAIT <strong>6 MOIS</strong></h4>
+                <img class="mx-auto" src="{{ asset('img/picto/picto_sheepi_6_mois.png') }}" alt="Picto abonnement 3 mois" width="150px">
+                <div class="card-body text-center">
+                    <h4 class="card-title prix_abonnement_white"><span class="font-weight-bold">15 €</span><span class="span_mois_white"> mois</span></h4>
+                    <p class="card-text paragraphe_abonnement_white">Le luxe de prendre de son temps !</p>
+                    <a href="#" class="btn btn-warning btn-block">Ok, je prends !</a>
+                </div>
+            </div>
+            <div class="card col-lg-3 my-3 mx-2">
+                <h4 class="text-center my-4 titre_abonnement">FORFAIT <strong>12 MOIS</strong></h4>
+                <img class="mx-auto" src="{{ asset('img/picto/picto_sheepi_12_mois.svg') }}" alt="Picto abonnement 3 mois" width="110px">
+                <div class="card-body text-center">
+                    <h4 class="card-title prix_abonnement"><span class="font-weight-bold">12 €</span><span class="span_mois"> mois</span></h4>
+                    <p class="card-text">Forfait confort pour les exigents :)</p>
+                    <a href="#" class="btn btn-warning btn-block">Ok, je prends !</a>
+                </div>
+            </div>
+        </div>
+        {# Bloc paragraphe forfaits #}
+        <div class="row no-padding justify-content-center">
+            <div class="col-lg-10 mb-4">
+                <p class="paragraphe_abonnement mx-5">Le forfait 3 mois est facturé sur 3 prélévements mensuels de 19€ TTC,
+                    pour une durée de 3 mois. Le forfait 6 mois est facturé sur 6 prélévements mensuels de 15€ TTC,
+                    pour une durée de 6 mois et le forfait 12 mois est facturé sur 12 prélévements mensuels de 12€ TTC,
+                    pour une durée de 12 mois.<br><br>
+
+                    A l'issue de tous ces abonnements, contrairement à bien d'autres sites, celui-ci ne sera pas automatiquement 
+                    reconduit pour une période identique à la précédente et dans les mêmes conditions. Lorsque la période s'arrête 
+                    le prélévement s'arrête automatiquement. Sheepi n'a pas à se remplir les poches si vous oubliez d'arrêter votre 
+                    abonnement :)
+                </p>
+            </div>  
+        </div>
+
+        {# Navbar mobile #}
+        <div class="mt-5 navbar_mobile">
+            {% if app.user %}
+            {% include('user/navbar_mobile.html.twig') %}
+            {% endif %}
+        </div>
+        {{ include('modals/modals.html.twig') }}
+    </div>
+</div>
+
+{% endblock %}

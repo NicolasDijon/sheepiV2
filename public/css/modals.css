@@ -1,0 +1,62 @@
+.modal-header{
+    background-image: linear-gradient(to bottom, #9779c3, #8e8cd0, #8b9ed7,  #8eaedb, #99bddd);
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.5);;
+}
+
+.modal-content{
+    border: none;
+}
+
+.modal-title{
+    color: white;
+}
+
+.close{
+    color: white;
+}
+
+.paragraphe_modal{
+    text-align: justify;
+}
+
+.divider_violet{
+    background-color: #977ac3;
+    height: 1px;
+    width: 90%;
+}
+
+.bloc_btn{
+    background-image: linear-gradient(to bottom, #ff9672, #ffa072, #ffa973, #ffb376, #febc79);
+    opacity: 0.8;
+    color: white; 
+    border: none;
+    font-size: 20px;
+}
+
+.bloc_btn:hover{
+    opacity: 1;
+}
+
+.custom-control-label:before{
+    background-color: white;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color:#8f70bf;
+}
+
+.titre_match{
+    color: #feb178;
+    font-size: 50px;
+}
+
+.modal_transparent{
+    background-color: transparent;
+}
+
+.text_modal_transparent{
+    color: white;
+    font-size: 20px;
+}

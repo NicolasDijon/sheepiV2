@@ -1,0 +1,90 @@
+.sidenav{
+    height: 100%;
+    width: 230px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+  
+.nav_lien{
+    padding: 15px 0px 2px 0px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.nav_lien:hover{
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.main{
+    margin-left: 230px;
+}
+
+.bloc_nav{
+    list-style: none;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #99bddd, #8eaedb, #8b9ed7, #8e8cd0, #9779c3);
+}
+
+.bloc_nav:hover,
+.bloc_nav:focus{
+    background-image: linear-gradient(to bottom, #febc79, #ffb376, #ffa973, #ffa072, #ff9672);
+    padding-top: 5px;
+    transition: all .3s 0s;
+    text-decoration: none;
+    color: white;
+}
+
+.active{
+    background-image: linear-gradient(to bottom, #febc79, #ffb376, #ffa973, #ffa072, #ff9672);
+}
+
+.active_footer{
+    color: #febc79;
+}
+
+.menu{
+    color: white;
+    font-size: 18px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.nav_logo{
+    margin: -7px 0px -8px 0px !important;
+}
+
+@media (max-width: 992px){
+    .sidenav{
+        display: none;
+    }    
+
+    .main{
+        margin-left: 0px;
+    }
+}
+
+@media (min-width: 1920px){
+    .menu{
+        font-size: 20px;
+    }
+}
+
+
+
+  
+
+  

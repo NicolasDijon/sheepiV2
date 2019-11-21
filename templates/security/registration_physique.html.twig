@@ -1,0 +1,169 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/registration.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    {# Bloc logo Sheepi #}
+    <div class="row justify-content-center">
+        <img src="{{asset('img/picto/logo_sheepi.png')}}" class="img-fluid my-4" alt="Logo Sheepi">
+    </div>
+    {# Bloc image #}
+    <div class="row">
+        <img src="{{asset('img/fond/hero_area_inscription.jpg')}}" class="img-fluid" alt="Banière inscription">
+    </div>
+    {# Bloc étapier #}
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="my-4 text-center titre_inscription ">Le physique attire...</h5>
+            <div class="row justify-content-center mb-4">
+                <img src="{{ asset('img/picto/picto_etapes_situation_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_physique_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_perso_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_bleu"></div>
+                <img src="{{ asset('img/picto/picto_etapes_passion_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_bleu"></div>
+                <img src="{{ asset('img/picto/picto_etapes_reglages_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+            </div>
+        </div>
+    </div>
+    {# Bloc Photo #}
+    <div class="row no-padding">
+        <div class="col-lg-12">
+            <div class="bloc_user">
+                <p class="text-center py-2 paragraphe_inscription">Mes photos</p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <p class="text-center py-2">
+                3 photos sont obligatoirement requises pour donner plus d'éclats à votre page !<br>
+                Avant d'importer vos photos, nous vous conseillons de lire les conditions d'utilisation et nos conseils en 
+                <a href="https://www.youtube.com/channel/UCgf5EbY8_8pkOuTTnEz9jQA" target="blank" class="lien_ici">cliquant ici</a>
+            </p>
+        </div>
+    </div>
+    {# Bloc pour ajouter des photos #}
+    <div class="row justify-content-center mb-4">
+        <div class="card col-lg-3 my-3 mx-2">
+            <img src="{{ asset('img/picto/picto_photo_star.svg') }}" class="picto_star" width="25px">
+            <img class="card-img-top mt-3" src="{{ asset('img/picto/bloc_photo.png') }}" alt="Image utilisateur">
+            <div class="card-body">
+                <h4 class="card-title text-center titre_card">Photo principale</h4>
+                <div class="row justify-content-center mt-4 mb-2">
+                    <a class="mr-3 ml-3 picto" href="#"><img src="{{ asset('img/picto/picto_photo_add.svg') }}" alt="Ajouter" width="40px"></a>
+                    <a class="mr-3 ml-3 picto" href="#"><img src="{{ asset('img/picto/picto_photo_trash.svg') }}" alt="Supprimer" width="28px"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card col-lg-3 my-3 mx-2">
+            <img class="card-img-top mt-3" src="{{ asset('img/picto/bloc_photo.png') }}" alt="Image utilisateur">
+            <div class="card-body">
+                <h4 class="card-title text-center titre_card">Photo 2</h4>
+                <div class="row justify-content-center mt-4 mb-2">
+                    <a class="mr-3 ml-3 picto" href="#"><img src="{{ asset('img/picto/picto_photo_add.svg') }}" alt="Ajouter" width="40px"></a>
+                    <a class="mr-3 ml-3 picto" href="#"><img src="{{ asset('img/picto/picto_photo_trash.svg') }}" alt="Supprimer" width="28px"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card col-lg-3 my-3 mx-2">
+            <img class="card-img-top mt-3" src="{{ asset('img/picto/bloc_photo.png') }}" alt="Image utilisateur">
+            <div class="card-body">
+                <h4 class="card-title text-center titre_card">Photo 3</h4>
+                <div class="row justify-content-center mt-4 mb-2">
+                    <a class="mr-3 ml-3 picto" href="#"><img src="{{ asset('img/picto/picto_photo_add.svg') }}" alt="Ajouter" width="40px"></a>
+                    <a class="mr-3 ml-3 picto" href="#"><img src="{{ asset('img/picto/picto_photo_trash.svg') }}" alt="Supprimer" width="28px"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# Bloc formulaire #}
+    <div class="row no-padding">
+        <div class="col-lg-6 pb-4">
+            <div class="bloc_user">
+                <p class="text-center py-2 paragraphe_inscription">Mon physique</p>
+            </div>
+            <div class="col-lg-7 col-md-7 my-4 mx-auto">
+                {{ form_start(form)}}
+                <div class="form-group">
+                    {{ form_label(form.maTaille, 'Ma taille :') }} <span class="val_ma_taille"></span>
+                    {{ form_widget(form.maTaille, { 'attr': { 'class': 'custom-range ma_taille' } }) }}
+                    {{ form_errors(form.maTaille) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.maSilhouette, 'Ma silhouette') }}
+                    {{ form_widget(form.maSilhouette, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.maSilhouette) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.mesCheveux, 'Mes cheveux') }}
+                    {{ form_widget(form.mesCheveux, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.mesCheveux) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.mesYeux, 'Mes yeux') }}
+                    {{ form_widget(form.mesYeux, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.mesYeux) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.mesSignesParticuliers, 'Mes signes particuliers') }}
+                    {{ form_widget(form.mesSignesParticuliers, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.mesSignesParticuliers) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.monStyle, 'Mes styles (3 maximum)') }}
+                    {{ form_widget(form.monStyle, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.monStyle) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 pb-4" style="background-color: #e8e3ef">
+            <div class="bloc_recherche">
+                <p class="text-center py-2 paragraphe_inscription">Son physique</p>
+            </div>
+            <div class="col-lg-7 col-md-7 my-4 mx-auto">
+                {{ form_start(form)}}
+                <div class="form-group">
+                    {{ form_label(form.saTaille, 'Sa taille :') }} <span class="val_sa_taille"></span>
+                    {{ form_widget(form.saTaille, { 'attr': { 'class': 'custom-range sa_taille' } }) }}
+                    {{ form_errors(form.saTaille) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.saSilhouette, 'Sa silhouette') }}
+                    {{ form_widget(form.saSilhouette, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.saSilhouette) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesCheveux, 'Ses cheveux') }}
+                    {{ form_widget(form.sesCheveux, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesCheveux) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesYeux, 'Ses yeux') }}
+                    {{ form_widget(form.sesYeux, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesYeux) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesSignesParticuliers, 'Ses signes particuliers') }}
+                    {{ form_widget(form.sesSignesParticuliers, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesSignesParticuliers) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesStyles, 'Ses styles(3 maximum)') }}
+                    {{ form_widget(form.sesStyles, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesStyles) }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning btn-block py-3 bloc_btn">Je passe à la suite :)</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}

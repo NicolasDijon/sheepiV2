@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/registration.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    {# Bloc logo Sheepi #}
+    <div class="row justify-content-center">
+        <img src="{{asset('img/picto/logo_sheepi.png')}}" class="img-fluid my-4" alt="Logo Sheepi">
+    </div>
+    {# Bloc image #}
+    <div class="row">
+        <img src="{{asset('img/fond/hero_area_inscription.jpg')}}" class="img-fluid" alt="Banière inscription">
+    </div>
+    {# Bloc étapier #}
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="my-4 text-center titre_inscription ">Une dernière étape et ce sera tout bon :)</h5>
+            <div class="row justify-content-center mb-4">
+                <img src="{{ asset('img/picto/picto_etapes_situation_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_physique_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_perso_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_passion_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_reglages_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+            </div>
+        </div>
+    </div>
+    {# Bloc formulaire #}
+    <div class="row no-padding">
+        <div class="col-lg-12">
+            <div class="bloc_user">
+                <p class="text-center py-2 paragraphe_inscription">Mes priorités</p>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="col-lg-4 col-md-5 mt-4 mb-5 mx-auto">
+                <p class="mb-5">Pour que nous puissions vous recommander des profils pertinents, nous avons besoin de connaître vos
+                    priorités. Choisissez une note entre <span class="font-weight-bold">1</span> (peu important) et 
+                    <span class="font-weight-bold">5</span> (très important) pour définir le degrè de priorité de chaque catégorie.
+                </p>
+                {{ form_start(form)}}
+                <div class="form-group">
+                    {{ form_label(form.perso, 'Perso (Sexe, âge, enfants & origines)') }} <span class="val_perso"></span>
+                    {{ form_widget(form.perso, { 'attr': { 'class': 'custom-range perso' } }) }}
+                    {{ form_errors(form.perso) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.physique, 'Physique (Taille, silhouette, cheveux, yeux, styles & signes)') }} 
+                    <span class="val_physique"></span>
+                    {{ form_widget(form.physique, { 'attr': { 'class': 'custom-range physique' } }) }}
+                    {{ form_errors(form.physique) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.personnalite, 'Personnalité (Caractère, addictions & spiritualité)') }} 
+                    <span class="val_personnalite"></span>
+                    {{ form_widget(form.personnalite, { 'attr': { 'class': 'custom-range personnalite' } }) }}
+                    {{ form_errors(form.personnalite) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.geographie, 'Géographie (Localisation)') }} <span class="val_geographie"></span>
+                    {{ form_widget(form.geographie, { 'attr': { 'class': 'custom-range geographie' } }) }}
+                    {{ form_errors(form.geographie) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.scolarite, "Scolarité (Niveau d'étude)") }} <span class="val_scolarite"></span>
+                    {{ form_widget(form.scolarite, { 'attr': { 'class': 'custom-range scolarite' } }) }}
+                    {{ form_errors(form.scolarite) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.passions, "Passions (Centres d'intérêt)") }} <span class="val_passions"></span>
+                    {{ form_widget(form.passions, { 'attr': { 'class': 'custom-range passions' } }) }}
+                    {{ form_errors(form.passions) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="bloc_user">
+                <p class="text-center py-2 paragraphe_inscription">Mes préférences</p>
+            </div>
+        </div>
+        <div class="row mx-auto">
+            <div class="col-lg-12 mt-3 mb-4">
+                <div class="custom-control">
+                    {{ form_row(form.telephone, {label_attr: {class: 'checkbox-custom'} }) }}
+                </div>
+                <div class="custom-control">
+                    {{ form_row(form.email, {label_attr: {class: 'checkbox-custom'} }) }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning btn-block py-3 mt-4 bloc_btn">Je valide mon inscription :)</button>
+    {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}

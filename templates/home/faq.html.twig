@@ -1,0 +1,183 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{# Sidenav desktop #}
+{% if app.user %}
+{% include('user/sidenav_user.html.twig') %}
+{% endif %}
+
+<div class="main" style="background-color: #f1edf6">
+    <div class="container-fluid">
+        {# Bloc image #}
+        <div class="row">
+            <img src="{{ asset('img/fond/hero_area_faq.jpg') }}" class="img-fluid" alt="Photo Sheepi faq">
+        </div>
+        {# Bloc titre #}
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="text-center my-4 title_home">FAQ - Nous avons toutes les réponses à vos questions :)</h2>
+            </div>
+            <div class="col-lg-12">
+                <h4 class="text-center my-4 titre_faq">LE FONCTIONNEMENT DE SHEEPI</h4>
+            </div>
+            {# Accordeon #}
+            <div class="accordion1 mb-4">
+                <button class="accordion">Quels est le concept de Sheepi ?</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div> 
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div> 
+            </div>
+            <div class="col-lg-12">
+                <h4 class="text-center my-4 titre_faq">LOREM IPSUM</h4>
+            </div>
+            <div class="accordion1 mb-4">
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div> 
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div> 
+            </div>
+            <div class="col-lg-12">
+                <h4 class="text-center my-4 titre_faq">LOREM IPSUM</h4>
+            </div>
+            <div class="accordion1 mb-5">
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div> 
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div>
+                <button class="accordion">Lorem ipsum</button>
+                <div class="panel">
+                    <p class="pAccordion">Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, 
+                        cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis 
+                        notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur 
+                        ille quidem utrumque, Phaedrum autem etiam amaret, cotidieque inter nos ea, quae audiebamus, 
+                        conferebamus, neque erat umquam controversia, quid ego intellegerem, sed quid probarem.
+                    </p>
+                </div> 
+            </div>
+        </div>
+        
+        {# Navbar mobile #}
+        <div class="mt-5 navbar_mobile">
+            {% if app.user %}
+            {% include('user/navbar_mobile.html.twig') %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

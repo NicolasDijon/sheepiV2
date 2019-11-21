@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/user.css') }}">
+{% endblock %}
+
+{% block title %}Sheepi - compte de {{ app.user.userName }}{% endblock %}
+
+{% block body %}
+
+{# Sidenav desktop #}
+{% if app.user %}
+{% include('user/sidenav_user.html.twig') %}
+{% endif %}
+
+<div class="main" style="background-color: #f1edf6">
+    <div class="container-fluid">
+        {# Bloc titre #}
+        <div class="row" style="background-color: white">
+            <div class="col-lg-12">
+                <h1 class="text-center title_home my-4">Ma page</h1>
+            </div>
+        </div>
+        {# Caroussel #}
+        <div class="row">
+            <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-1z" data-slide-to="1" class="mx-4"></li>
+                    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(130).jpg"
+                            alt="Image utilisateur">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg"
+                            alt="Image utilisateur">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"
+                            alt="Image utilisateur">
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# Bloc nom & age utilisateur #}
+        <div class="row" style="background-color: #977ac3">
+            <div class="col-lg-12">
+                <h2 class="text-center my-4 title_nom">{{ app.user.userName }} ({{ user.situation.monAge }} ans)</h2>
+            </div>
+        </div>
+        {# Bloc situation utilisateur #}
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-6 text-center bg_infos">
+                        <img src="{{ asset('img/picto/picto_job.svg') }}" class="my-4" width="50px" alt="Picto job">
+                        <p class="paragraphe_infos text-center">Je suis<br>{{ user.personnalite.monJob }}</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 text-center bg_infos">
+                        <img src="{{ asset('img/picto/picto_adresse.svg') }}" class="my-4" width="60px" alt="Picto adresse">
+                        <p class="paragraphe_infos text-center">
+                        {{ user.situation.maVille }}<br>
+                        {{ user.situation.monDepartement }}<br>
+                        {{ user.situation.monPays }}
+                        </p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 text-center bg_infos">
+                        <img src="{{ asset('img/picto/picto_personnalite.svg') }}" class="my-4" width="50px" alt="Picto personnalité">
+                        <p class="paragraphe_infos text-center">{{ user.personnalite.monCaractere }}</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 text-center bg_infos">
+                        <img src="{{ asset('img/picto/picto_hobbies.svg') }}" class="my-4" width="50px" alt="Picto hobbies">
+                        <p class="paragraphe_infos text-center">{{ user.passion.mesDivertissements }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# Bloc informations utilisateur #}
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 my-4 bloc_infos">
+                        <p class="text-center title_infos">TAILLE / SILHOUETTE</p>
+                        <p class="text-center">{{ user.physique.maTaille }} cm - {{ user.physique.maSilhouette }}</p>
+                    </div>
+                    <div class="col-xl-3 col-md-6 my-4 bloc_infos">
+                        <p class="text-center title_infos">ENFANTS</p>
+                        <p class="text-center">{{ user.situation.mesEnfants }} Enfant(s)</p>
+                    </div>
+                    <div class="blocOrigine col-xl-3 col-md-6 my-4 bloc_infos">
+                        <p class="text-center title_infos">ORIGINES</p>
+                        <p class="text-center">{{ user.situation.mesOrigines }}</p>
+                    </div>
+                    <div class="col-xl-3 col-md-6 my-4 bloc_infos">
+                        <p class="text-center title_infos">STYLES</p>
+                        <p class="text-center">{{ user.physique.monStyle }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 my-4 bloc_infos">
+                        <p class="text-center title_infos">PETITES ADDICTIONS</p>
+                        <p class="text-center">{{ user.personnalite.mesPetitesAddictions }}</p>
+                    </div>
+                    <div class="col-xl-3 col-md-6 my-4 bloc_infos">
+                        <p class="text-center title_infos">SPIRITUALITÉ</p>
+                        <p class="text-center">{{ user.personnalite.mesConvictionsSpirituelles }}</p>
+                    </div>
+                    <div class="col-xl-3 col-md-6 my-4 bloc_infos">
+                        <p class="text-center title_infos">SCOLARITÉ</p>
+                        <p class="text-center">{{ user.personnalite.monNiveauEtude }}</p>
+                    </div>
+                    <div class="col-xl-3 col-md-6 my-4 bloc_infos">
+                        <p class="text-center title_infos">SIGNES PARTICULIERS</p>
+                        <p class="text-center">{{ user.physique.mesSignesParticuliers }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# Bloc coordonnées de contact utilisateur #}
+        <div class="row">
+            <div class="text-center col-xl-6 col-lg-6 col-md-6 bloc_relation">
+                <p class="text-center paragraphe_relation my-4">{{ user.situation.monTelephone }}</p>
+            </div>
+            <div class="text-center col-xl-6 col-lg-6 col-md-6 bloc_relation">
+                <p class="text-center paragraphe_relation my-4">{{ user.email }}</p>
+            </div>
+        </div>
+
+        {# Navbar mobile #}
+        <div class="mt-5 navbar_mobile">
+            {% if app.user %}
+            {% include('user/navbar_mobile.html.twig') %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

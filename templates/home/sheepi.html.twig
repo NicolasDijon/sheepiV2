@@ -1,0 +1,184 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{# Sidenav desktop #}
+{% if app.user %}
+{% include('user/sidenav_user.html.twig') %}
+{% endif %}
+
+<div class="main">
+    <div class="container-fluid">
+        {# Bloc image #}
+        <div class="row">
+            <img src="{{ asset('img/fond/hero_area.jpg') }}" class="img-fluid" alt="Photo Sheepi">
+        </div>
+        {# Sheepi concept #}
+        <div class="row" style="background-color: #f1edf6">
+            <div class="col-lg-12">
+                <h2 class="text-center my-4 title_home">Sheepi</h2>
+            </div>
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <p class="paragraphe_sheepi">
+                    On pense sans trop se tromper que vous êtes au bon endroit pour retrouver le sourire et confiance en votre avenir 
+                    sentimental. Rentrer en contact avec des célibataires sur internet fonctionne, il faut juste tomber sur la plateforme 
+                    qui préfère faire vivre une noble idée plutôt que de sombrer dans le profit à outrance. Et bien figurez-vousque ça 
+                    tombe bien, car vous y êtes :)
+                </p>
+            </div>
+        </div>
+        {# Div des 3 bloc Sheepi concept #}
+        <div class="row justify-content-center" style="background-color: #f1edf6">
+            <div class="card col-lg-3 col-md-10 mt-3 mb-5 mx-3">
+                <h5 class="text-center py-4 titre_sheepi">Il était une fois...</h5>
+                <img src="{{ asset('img/picto/picto_histoire.svg') }}" class="img-fluid mx-auto" alt="Picto histoire" width="70px">
+                <p class="paragraphe_sheepi my-4">
+                    Le concept de Sheepi est né en 2015 lorsque son créateur, fraichement
+                    séparé d'une grande histoire sentimentale, peinait vraiment à trouver
+                    des personnes intéressantes et compatibles avec lui.<br><br>
+                    Les sites de rencontre n'arrivaient pas à combler ses attentes et celles de ces 
+                    ami(e)s célibataires. Après avoir fait une étude de marché et un business plan, il 
+                    a vite compris pourquoi cela ne marchait pas.<br><br>
+                    Après des années de réflexions, de recherches et de rencontres, Sheepi voit 
+                    enfin le jour dans l'optique de proposer une réelle alternative aux célibataires 
+                    désireux de trouver une personne qui partagerait les mêmes centres d'intérêt qu'eux.
+                </p>
+            </div>
+            <div class="card col-lg-3 col-md-10 mt-3 mb-5 mx-3">
+                <h5 class="text-center py-4 titre_sheepi">Philosophie</h5>
+                <img src="{{ asset('img/picto/picto_philo.svg') }}" class="img-fluid mx-auto" alt="Picto phylosophie" width="70px">
+                <p class="paragraphe_sheepi my-4">
+                    Nous sommes différents et nous aimons l'idée de pouvoir réunir des personnes 
+                    différentes et saines dans notre vraiment pâturage. Nous l'appelons l'éco-rencontre.<br><br>
+                    Nous pensons que la culture du zapping, la sociète de consommation et le mauvais
+                    climat social environnent sont les causes directes de trop grand nombre de
+                    célibataires et la plupart des plateformes sensées vous aider à ne plus l'être semblent
+                    privilégier le profit à votre bonheur.<br><br>
+                    Chez Sheepi nous revendiquons et épousons les valeurs du "Mieux vivre ensemble" et 
+                    proposons une solution similaire à l'univers Bio, le commerce équitable ou les 
+                    applications du type Yuka qui se démènent à nous rendre la vie meilleure.
+                </p>
+            </div>
+            <div class="card col-lg-3 col-md-10 mt-3 mb-5 mx-3">
+                <h5 class="text-center py-4 titre_sheepi">Rélovution</h5>
+                <img src="{{ asset('img/picto/picto_relovution.svg') }}" class="img-fluid mx-auto" alt="Picto rélovution" width="70px">
+                <p class="paragraphe_sheepi my-4">
+                    Avec Sheepi, il suffit juste de prendre à peu près 5 minutes pour remplir son profil, de 
+                    choisir son abonnement et d'attendre sans rien faire que Sheepi vous envoie des
+                    propositions de membres compatibles.<br><br>
+                    Finies les recherches interminables. Si vous choisissez de faire connaissance avec un
+                    membre compatible qui réciproquement souhaite aussi discuter avec vous, Sheepi
+                    vous transmet directement les coordonnées de ce membre. La suite vous appartient...<br><br>
+                    Sheepi est un petit peu une agence matrimoniale automatisée. Ce système est
+                    idéal pour tous les célibataires fatigué(e)s et déçu(e)s par les autres sites de rencontre qui
+                    n'ont pas beaucoup de temps à accorder à la recherche de son ou sa partenaire idéal(e).
+                </p>
+            </div>
+        </div>
+        {# Bloc video de présentation #}
+        <div class="row" style="background-color: #e9e2f3">
+            <div class="col-lg-12">
+                <h2 class="text-center my-4 title_home">Ok, mais comment ça marche ?</h2>
+            </div>
+            <div class="col-lg-10 mx-auto">
+                <p class="text-center">
+                    Sheepi est très simple, mais une petite vidéo vous parlera plus qu'un long discours :)
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center" style="background-color: #e9e2f3">
+            <div class="video col-lg-10 col-md-3 mt-3 mb-5 mx-3" style="background-color: white"></div>
+        </div>  
+        {# Bloc règles de savoir-vivre #}
+        <div class="row" style="background-color: #e1d6ee">
+            <div class="col-lg-12">
+                <h2 class="text-center my-4 title_home">Nos règles de savoir-vivre</h2>
+            </div>
+            <div class="col-lg-10 col-md-10 mx-auto">
+                <p class="paragraphe_sheepi">
+                    Ces règles nous permettent de maintenir une bonne ambiance et une sérénité auprès de 
+                    nos membres. Toute personne ne respectant pas ces mesures sont susceptibles d'être signalé(e)s 
+                    par d'autres membres mécontents. Au bout de 3 signalements, <strong>le membre sera définitivement 
+                    exclus du site</strong>, même si son abonnement est en cours. N'hésitez pas à consulter nos 
+                    <a href="{{ path('home_mentions') }}" class="lien_sheepi">conditions d'utilisation</a> ou notre 
+                    <a href="{{ path('home_faq') }}" class="lien_sheepi">foire aux questions</a> pour en savoir plus.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center pb-5" style="background-color: #e1d6ee">
+            <div class="card col-lg-4 col-md-10 my-3 mx-3">
+                <div class="row bloc_titre_conditions">
+                    <div class="col-lg-12 text-center">
+                        <h5 class="pt-4 pb-3 h5_sheepi">Photos inaproppriées</h5>
+                    </div>
+                </div>
+                <img src="{{ asset('img/picto/picto_photo.svg') }}" class="img-fluid mx-auto my-4" alt="Picto règles" width="80px">
+                <p class="paragraphe_sheepi mx-4 pb-3">
+                    Les visuels de nos membres doivent être purement
+                    photographiques (pas d'illustration 2D ou 3D) et
+                    vous représenter seul(e), habillé(e), sans texte, sans
+                    retouches, sans armes, ni drogue, ni argent. Les photos
+                    vous présentant torses nus ou présentant une partie
+                    intime de votre anatomie.
+                </p>
+            </div>
+            <div class="card col-lg-4 col-md-10 my-3 mx-3">
+                <div class="row bloc_titre_conditions">
+                    <div class="col-lg-12 text-center">
+                        <h5 class="pt-4 pb-3 h5_sheepi">Inactivités / Ghosting</h5>
+                    </div>
+                </div>
+                <img src="{{ asset('img/picto/picto_ghost.svg') }}" class="img-fluid mx-auto py-4" alt="Picto règles" width="80px">
+                <p class="paragraphe_sheepi mx-4 pb-3">
+                    Un membre qui choisit de ne plus donner suite à des 
+                    échanges avec un autre membre, temporairement ou
+                    non, est prié d'avoir l'honnèteté de lui dire clairement et
+                    de ne pas lâchement disparaître sans rien dire pour se
+                    dédouaner d'une situation ambarassante. Soyez
+                    honnète et ne ghostez pas un membre de Sheepi.
+                </p>
+            </div>
+            <div class="card col-lg-4 col-md-10 my-3 mx-3">
+                <div class="row bloc_titre_conditions">
+                    <div class="col-lg-12 text-center">
+                        <h5 class="pt-4 pb-3 h5_sheepi">Insultes et vulgarité</h5>
+                    </div>
+                </div>
+                <img src="{{ asset('img/picto/picto_insultes.svg') }}" class="img-fluid mx-auto py-4" alt="Picto règles" width="80px">
+                <p class="paragraphe_sheepi mx-4 pb-3">
+                    On a le droit d'être en désaccord, déçu(e), fatigué(e),
+                    malade ou même  agacé lors de certaines conversations.
+                    Cependant nous demandons à nos membres de tenter
+                    de garder intact la bonne humeur qui rayonne sur le 
+                    pâturage et de maîtriser leur sang froid en se gardant 
+                    de l'insulter. La courtoisie c'est cool :)
+                </p>
+            </div>
+            <div class="card col-lg-4 col-md-10 my-3 mx-3">
+                <div class="row bloc_titre_conditions">
+                    <div class="col-lg-12 text-center">
+                        <h5 class="pt-4 pb-3 h5_sheepi">Mensonges</h5>
+                    </div>
+                </div>
+                <img src="{{ asset('img/picto/picto_mensonges.svg') }}" class="img-fluid mx-auto py-4" title="Picto règles" width="80px">
+                <p class="paragraphe_sheepi mx-4 pb-3">
+                    Mettre des photos qui ont 10 ans, cacher une calvitie, un
+                    surpoids, une autre relation ou tenter d'escroquer les
+                    membres n'a aucun interêt. Ce n'est qu'une question de 
+                    temps avant que la personne découvre la vérité et soit
+                    déçu(e). Ne prenez pas de risque, soyez honnète et 
+                    gardez vous de mentir.
+                </p>
+            </div>
+        </div>
+
+        {# Navbar mobile #}
+        <div class="mt-5 navbar_mobile">
+            {% if app.user %}
+            {% include('user/navbar_mobile.html.twig') %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

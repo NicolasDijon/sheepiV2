@@ -1,0 +1,134 @@
+.title_nom{
+    color: white;
+}
+
+.bg_infos{
+    background-color: white;
+}
+
+.paragraphe_infos{
+    color: #212529;
+    font-size: 18px;
+}
+
+.title_infos{
+    color: #9f85c7;
+    
+}
+
+.bloc_infos{
+    line-height: 0.5em;
+}
+
+.bloc_relation{
+    background-color: #31c29a;
+    border-right: 1px solid white;
+}
+
+.paragraphe_relation{
+    color: white;
+    font-size: 20px;
+}
+
+.carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+.carousel-indicators li:hover {
+    background-color: #ff8970;
+}
+
+.resultats_relation{
+    background-color: #32c39b;
+}
+
+.titre_resultats{
+    color: white;
+}
+
+.resultats_attente{
+    background-color: #feb378;
+}
+
+.resultats_refuse{
+    background-color: #ff806b;
+}
+
+.picto{
+    opacity: 0.8;
+}
+
+.picto:hover{
+    opacity: 1;
+}
+
+.nom_relation{
+    color: #32c39b;
+}
+
+.nom_attente{
+    color: #feb378;
+}
+
+.nom_refus{
+    color: #ec8773;
+}
+
+.bloc_ok{
+    background-color: #32c39b;
+    opacity: 0.8;
+}
+
+.bloc_no{
+    background-color: #ed8874;
+    opacity: 0.8;
+}
+
+.bloc_ok:hover, .bloc_no:hover{
+    opacity: 1;
+}
+
+.card-img-top{
+    border-radius: 0%;
+}
+
+.card:hover{
+    /* L'image est grossie de 25% */
+    -webkit-transform:scale(1.05); /* Safari et Chrome */
+    -moz-transform:scale(1.05); /* Firefox */
+    -ms-transform:scale(1.05); /* Internet Explorer 9 */
+    -o-transform:scale(1.05); /* Opera */
+    transform:scale(1.05);
+}
+
+input::placeholder{
+    color: #8f70bf !important;
+}
+
+.custom-select{
+    color: #8f70bf !important;
+}
+
+@media (max-width: 767px){
+    .title_nom{
+        font-size: 25px;
+    }
+
+    .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 992px){
+    .card:hover{
+        transform: none;
+    }
+}
+
+
+
+
+

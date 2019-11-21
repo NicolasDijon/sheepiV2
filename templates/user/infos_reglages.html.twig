@@ -1,0 +1,179 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/registration.css') }}">
+{% endblock %}
+
+{% block title %}Réglages de {{ app.user.userName }}{% endblock %}
+
+{% block body %}
+
+{# Sidenav desktop #}
+{% if app.user %}
+{% include('user/sidenav_user.html.twig') %}
+{% endif %}
+
+<div class="main" style="background-color: #f1edf6">
+    <div class="container-fluid">
+        {# Bloc titre #}
+        <div class="row" style="background-color: white">
+            <div class="col-lg-12">
+                <h1 class="text-center title_home my-4">Mes infos</h1>
+            </div>
+        </div>
+        {# Bloc image #}
+        <div class="row">
+            <img src="{{asset('img/fond/hero_area_inscription.jpg')}}" class="img-fluid" alt="Banière mes infos">
+        </div>
+        {# Bloc navbar mes infos #}
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row justify-content-center my-4">
+                    <a href="{{ path('user_infos_situation') }}">
+                        <img src="{{ asset('img/picto/picto_etapes_situation_bleu.svg') }}" width=" 60px" class="picto_mobile" alt="Picto mes infos">
+                    </a>
+                    <div class="ligne_bleu"></div>
+                    <a href="{{ path('user_infos_physique') }}">
+                        <img src="{{ asset('img/picto/picto_etapes_physique_bleu.svg') }}" width=" 60px" class="picto_mobile" alt="Picto mes infos">
+                    </a>
+                    <div class="ligne_bleu"></div>
+                    <a href="{{ path('user_infos_personnalite') }}">
+                        <img src="{{ asset('img/picto/picto_etapes_perso_bleu.svg') }}" width=" 60px" class="picto_mobile" alt="Picto mes infos">
+                    </a>
+                    <div class="ligne_bleu"></div>
+                    <a href="{{ path('user_infos_passion') }}">
+                        <img src="{{ asset('img/picto/picto_etapes_passion_bleu.svg') }}" width=" 60px" class="picto_mobile" alt="Picto mes infos">
+                    </a>
+                    <div class="ligne_bleu"></div>
+                    <a href="{{ path('user_infos_reglage') }}">
+                        <img src="{{ asset('img/picto/picto_etapes_reglages_orange.svg') }}" width=" 60px" class="picto_mobile" alt="Picto mes infos">
+                    </a>
+                </div>
+            </div>
+        </div>
+        {# Message flash #}
+        {% for msg in app.session.flashBag.get('success') %}
+        <div class="row no-padding">
+            <div class="col-lg-12 alert alert-secondary text-center alert-dismissible fade show mt-4" role="alert">
+                {{ msg }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+        {% endfor %}
+        {# Bloc formulaire #}
+        <div class="row no-padding">
+            <div class="col-lg-12">
+                <div class="bloc_user">
+                    <p class="text-center py-2 paragraphe_inscription">Mes infos d'inscription</p>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="col-lg-4 col-md-5 my-4 mx-auto">
+                    {{ form_start(form_edit_user) }}
+                    <div class="form-group">
+                        {{ form_label(form_edit_user.userName, 'Mon pseudo') }}
+                        {{ form_widget(form_edit_user.userName, { 'attr': { 'class': 'form-control' } }) }}
+                        {{ form_errors(form_edit_user.userName) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form_edit_user.email, 'Mon email') }}
+                        {{ form_widget(form_edit_user.email, { 'attr': { 'class': 'form-control' } }) }}
+                        {{ form_errors(form_edit_user.email) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form_edit_user.password, 'Je change mon mot de passe') }}
+                        {{ form_widget(form_edit_user.password, { 'attr': { 'class': 'form-control' } }) }}
+                        {{ form_errors(form_edit_user.password) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form_edit_user.confirm_password, 'Je confirme mon nouveau mot de passe') }}
+                        {{ form_widget(form_edit_user.confirm_password, { 'attr': { 'class': 'form-control' } }) }}
+                        {{ form_errors(form_edit_user.confirm_password) }}
+                    </div>
+                    <div class="form-group mt-5 pb-3">
+                        <button type="submit" class="btn btn-warning btn-block bloc_btn py-3">Je mets à jour mes infos d'inscription</button>
+                    </div>
+                    {{ form_end(form_edit_user) }}
+                </div>
+            </div>
+        </div>
+        <div class="row no-padding">
+            <div class="col-lg-12">
+                <div class="bloc_user">
+                    <p class="text-center py-2 paragraphe_inscription">Mes priorités</p>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="col-lg-4 col-md-5 mt-4 mb-5 mx-auto">
+                    <p class="mb-5">Pour que nous puissions vous recommander des profils pertinents, nous avons besoin de connaître vos
+                        priorités. Choisissez une note entre <span class="font-weight-bold">1</span> (peu important) et 
+                        <span class="font-weight-bold">5</span> (très important) pour définir le degrè de priorité de chaque catégorie.
+                    </p>
+                    {{ form_start(form)}}
+                    <div class="form-group">
+                        {{ form_label(form.perso, 'Perso (Sexe, âge, enfants & origines)') }} <span class="val_perso"></span>
+                        {{ form_widget(form.perso, { 'attr': { 'class': 'custom-range perso' } }) }}
+                        {{ form_errors(form.perso) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.physique, 'Physique (Taille, silhouette, cheveux, yeux, styles & signes)') }} 
+                        <span class="val_physique"></span>
+                        {{ form_widget(form.physique, { 'attr': { 'class': 'custom-range physique' } }) }}
+                        {{ form_errors(form.physique) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.personnalite, 'Personnalité (Caractère, addictions & spiritualité)') }} 
+                        <span class="val_personnalite"></span>
+                        {{ form_widget(form.personnalite, { 'attr': { 'class': 'custom-range personnalite' } }) }}
+                        {{ form_errors(form.personnalite) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.geographie, 'Géographie (Localisation)') }} <span class="val_geographie"></span>
+                        {{ form_widget(form.geographie, { 'attr': { 'class': 'custom-range geographie' } }) }}
+                        {{ form_errors(form.geographie) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.scolarite, "Scolarité (Niveau d'étude)") }} <span class="val_scolarite"></span>
+                        {{ form_widget(form.scolarite, { 'attr': { 'class': 'custom-range scolarite' } }) }}
+                        {{ form_errors(form.scolarite) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.passions, "Passions (Centres d'intérêt)") }} <span class="val_passions"></span>
+                        {{ form_widget(form.passions, { 'attr': { 'class': 'custom-range passions' } }) }}
+                        {{ form_errors(form.passions) }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="bloc_user">
+                    <p class="text-center py-2 paragraphe_inscription">Mes préférences</p>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="col-lg-12 mt-3 mb-4">
+                    <div class="custom-control">
+                        {{ form_row(form.telephone, {label_attr: {class: 'checkbox-custom'} }) }}
+                    </div>
+                    <div class="custom-control">
+                        {{ form_row(form.email, {label_attr: {class: 'checkbox-custom'} }) }}
+                    </div>
+                    <div class="form-group mt-5">
+                        <button type="submit" class="btn btn-warning btn-block bloc_btn py-3">Je mets à jour mes priorités & préférences</button>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+        
+        {# Navbar mobile #}
+        <div class="mt-5 navbar_mobile">
+            {% if app.user %}
+            {% include('user/navbar_mobile.html.twig') %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

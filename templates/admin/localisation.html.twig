@@ -1,0 +1,41 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Dashboard-Sheepi{% endblock %}
+
+{% block body %}
+
+<!-- MAIN CONTENT-->
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="au-card m-b-30">
+                            <div class="au-card-inner">
+                                <h3 class="title-2 m-b-40">Pays</h3>
+                                <canvas id="pieChartPays"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="au-card m-b-30">
+                            <div class="au-card-inner">
+                                <h3 class="title-2 m-b-40">France</h3>
+                                <canvas id="singelBarChartFrance"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- END MAIN CONTENT-->
+    <!-- END PAGE CONTAINER-->
+    </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

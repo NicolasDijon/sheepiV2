@@ -1,0 +1,129 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/user.css') }}">
+{% endblock %}
+
+{% block title %}Sheepi - compte de {{ app.user.userName }}{% endblock %}
+
+{% block body %}
+
+{% if app.user %}
+{% include('user/sidenav_user.html.twig') %}
+{% endif %}
+
+<div class="main" style="background-color: #f1edf6">
+    <div class="container-fluid">
+        <div class="row" style="background-color: white">
+            <div class="col-lg-12">
+                <h1 class="text-center title_home my-4">Mes résultats</h1>
+            </div>
+        </div>
+
+        <div class="row no-padding">
+            <div class="col-lg-12">
+                <div class="resultats_relation">
+                    <h5 class="text-center py-2 titre_resultats">En relation</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            {% for user in users %}
+            <div class="card card-cascade narrower col-lg-3 mt-3 mb-4 mx-3">
+                <div class="">
+                    <img  class="card-img-top mt-3" src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg" alt="Photo utilisateur">
+                </div>
+                <div class="card-body card-body-cascade">
+                    <h4 class="card-title text-center nom_relation">{{ user.userName }}</h4>
+                    <p class="card-text text-center">Proposé le 06/11/2019</p>
+                </div>
+                <div class="card-footer text-muted text-center" style="background-color: white">
+                    <div class="row justify-content-center my-2">
+                        <a href="#" class="mx-2 picto" data-toggle="modal" data-target="#modal_alert_user"><img src="{{ asset('img/picto/picto_signalement_hover.svg') }}" alt="picto" width="41px"></a>
+                        <a class="mx-2 picto" href="{{ path('user_voir_profile', { 'id': user.id }) }}"><img src="{{ asset('img/picto/picto_page_hover.svg') }}" alt="picto" width="41px"></a>
+                        <a class="mx-2 picto" href="#" data-toggle="modal" data-target="#modal_delete_relation"><img src="{{ asset('img/picto/picto_trash_hover.svg') }}" alt="picto" width="40px"></a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="card card-cascade narrower col-lg-3 mt-3 mb-4 mx-3">
+                <div class="">
+                    <img  class="card-img-top mt-3" src="{{ asset('img/picto/bloc_user.png') }}" alt="Photo utilisateur">
+                </div>
+                <div class="card-body card-body-cascade">
+                    <h4 class="card-title text-center nom_relation">Vous n'avez pas<br>encore de relation</h4>
+                </div>
+                <div class="card-footer text-muted text-center" style="background-color: white">
+                    <div class="row justify-content-center my-2">
+                        <button type="button" class="mx-2picto" data-toggle="modal" data-target="#modal_alert_user"><img src="{{ asset('img/picto/picto_signalement_off.svg') }}" alt="picto" width="41px"></button>
+                        <a class="mx-2picto"><img src="{{ asset('img/picto/picto_page_off.svg') }}" alt="picto" width="41px"></a>
+                        <a class="mx-2picto"><img src="{{ asset('img/picto/picto_trash_off.svg') }}" alt="picto" width="40px"></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="row no-padding">
+            <div class="col-lg-12">
+                <div class="resultats_attente">
+                    <h5 class="text-center py-2 titre_resultats">En attente</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="card card-cascade narrower col-lg-3 mt-3 mb-4 mx-3">
+                <div class="">
+                    <img  class="card-img-top mt-3" src="{{ asset('img/picto/bloc_user.png') }}" alt="Photo utilisateur">
+                </div>
+                <div class="card-body card-body-cascade">
+                    <h4 class="card-title text-center nom_attente">Vous n'avez personne<br>en attente</h4>
+                </div>
+                <div class="card-footer text-muted text-center" style="background-color: white">
+                    <div class="row justify-content-center my-2">
+                        <a class="mx-2 picto"><img src="{{ asset('img/picto/picto_signalement_off.svg') }}" alt="picto" width="41px"></a>
+                        <a class="mx-2 picto"><img src="{{ asset('img/picto/picto_page_off.svg') }}" alt="picto" width="41px"></a>
+                        <a class="mx-2 picto"><img src="{{ asset('img/picto/picto_trash_off.svg') }}" alt="picto" width="40px"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-padding">
+            <div class="col-lg-12">
+                <div class="resultats_refuse">
+                    <h5 class="text-center py-2 titre_resultats">Refusé(e)s</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="card card-cascade narrower col-lg-3 mt-3 mb-4 mx-3">
+                <div class="">
+                    <img  class="card-img-top mt-3" src="{{ asset('img/picto/bloc_user.png') }}" alt="Photo utilisateur">
+                </div>
+                <div class="card-body card-body-cascade">
+                    <h4 class="card-title text-center nom_refus">Vous n'avez encore<br>refusé personne</h4>
+                </div>
+                <div class="card-footer text-muted text-center" style="background-color: white">
+                    <div class="row justify-content-center my-2">
+                        <a class="mx-2 picto"><img src="{{ asset('img/picto/picto_signalement_off.svg') }}" alt="picto" width="41px"></a>
+                        <a class="mx-2 picto"><img src="{{ asset('img/picto/picto_page_off.svg') }}" alt="picto" width="41px"></a>
+                        <a class="mx-2 picto"><img src="{{ asset('img/picto/picto_trash_off.svg') }}" alt="picto" width="40px"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="mt-5 navbar_mobile">
+            {% if app.user %}
+            {% include('user/navbar_mobile.html.twig') %}
+            {% endif %}
+        </div>
+        {{ include('modals/modals.html.twig') }}
+    </div>
+</div>
+
+{% endblock %}

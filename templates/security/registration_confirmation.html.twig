@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/registration.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    {# Bloc logo Sheepi #}
+    <div class="row justify-content-center">
+        <img src="{{asset('img/picto/logo_sheepi.png')}}" class="img-fluid my-4" alt="Logo Sheepi">
+    </div>
+    {# Bloc image #}
+    <div class="row">
+        <img src="{{asset('img/fond/hero_area_inscription.jpg')}}" class="img-fluid" alt="Banière inscription">
+    </div>
+    {# Bloc fin d'inscription #}
+    <div class="col-lg-12">
+        <div class="col-lg-5 col-md-7 my-4 mx-auto">
+            <h2 class="text-center title_home my-4">Félicitations :)</h2>
+            <p class="">Et voilà ! C'est fait ! Vous êtes officiellement membre de Sheepi. Mais avant de
+                fermer le site et d'attendre qu'on vous recontacte, nous vous invitons à 
+                découvrir votre <a href="{{ path('user') }}" class="lien_compte">page membre</a> pour voir si tout vous convient. N'oublions pas 
+                que les membres vont la consulter et qu'elle doit être attrayante :)
+            </p>
+            <a href="{{ path('user') }}" class="btn btn-warning btn-block bloc_btn py-3 mt-4">Je vérifie ma page pour voir si tout est OK</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

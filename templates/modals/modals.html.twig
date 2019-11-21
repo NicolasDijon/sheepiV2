@@ -1,0 +1,247 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/modals.css') }}">
+{% endblock %}
+
+{# Modal de suppression de compte utilisateur #}
+<div class="modal fade" id="modal_delete_account" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Je supprime mon compte :(</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <img src="{{ asset('img/picto/picto_sheepi_suppression.svg') }}" class="my-2 ml-4" alt="logo Sheepi" width="100px">
+                    <p class="paragraphe_modal mx-4 mt-3">Peut-être avez-vous trouvé la bonne personne ?
+                        Autrement, nous espérons que ce n'est qu'un au-revoir. Si 
+                        le fonctionnement de Sheepi ne vous convient pas, on 
+                        serait ravi de recueillir votre ressenti en vu de l'améliorer.
+                    </p>
+                    <div class="divider_violet my-3"></div>
+                    <div class="col-lg-10 mt-3">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                            <label class="custom-control-label" for="defaultUnchecked">Tout vas bien, j'ai trouvé quelqu'un de sympa</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked1">
+                            <label class="custom-control-label" for="defaultUnchecked1">Sheepi ne me propose pas assez de profils</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked2">
+                            <label class="custom-control-label" for="defaultUnchecked2">Les profils ne sont pas compatibles avec moi</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked3">
+                            <label class="custom-control-label" for="defaultUnchecked3">Je n'ai pas assez de mise en relation</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked4">
+                            <label class="custom-control-label" for="defaultUnchecked4">Les forfaits sont trop chers</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked5">
+                            <label class="custom-control-label" for="defaultUnchecked5">Je préfère les sites de rencontres classiques</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked6">
+                            <label class="custom-control-label" for="defaultUnchecked6">Je n'ai pas le temps d'y être</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked7">
+                            <label class="custom-control-label" for="defaultUnchecked7">Autre...</label>
+                        </div>
+                        <button type="button" class="btn btn-warning btn-block bloc_btn my-4">
+                            Je supprime mon compte
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Modal de confirmation de suppression de compte utilisateur #}
+<div class="modal fade" id="modal_delete_account_confirm" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Votre compte a bien été supprimé.</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <img src="{{ asset('img/picto/picto_sheepi_suppression.svg') }}" class="my-2 ml-4" alt="logo Sheepi" width="100px">
+                    <p class="paragraphe_modal mx-4 my-2">
+                        Nous vous souhaitons une très bonne continuation mais si vous changez d'avis, nos portes seront toujours ouvertes :)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Modal de signalement d'un utilisateur #}
+<div class="modal fade" id="modal_alert_user" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Je signale un membre</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <img src="{{ asset('img/picto/picto_signaler.svg') }}" class="my-2" alt="Picto signalement" width="60px">
+                    <p class="paragraphe_modal mx-4 mt-2">Nous prenons très au sérieux les membres indésirables.
+                        N'hésitez pas à nous signaler tout comportements irrespectueux :
+                    </p>
+                    <div class="divider_violet my-3"></div>
+                    <div class="col-lg-10 mt-3">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="default">
+                            <label class="custom-control-label" for="default">Ne répond pas aux messages (Ghosting)</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="default1">
+                            <label class="custom-control-label" for="default1">Décalage profil / vraie vie (Mensonges)</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="default2">
+                            <label class="custom-control-label" for="default2">Photos trompeuses ou choquantes</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="default3">
+                            <label class="custom-control-label" for="default3">Comportement incorrect</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="default4">
+                            <label class="custom-control-label" for="default4">Autre...</label>
+                        </div>
+                        <button type="button" class="btn btn-warning btn-block bloc_btn my-4">
+                            Je signale ce membre
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Modal vous avez déjà signalé ce membre #}
+<div class="modal fade" id="modal_alert_user_again" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Je signale un membre</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <img src="{{ asset('img/picto/picto_signaler.svg') }}" class="my-2" alt="logo Sheepi" width="60px">
+                </div>
+                <p class="text-center mx-4 my-2">
+                    <strong>Vous avez déjà signalé ce membre :)</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Modal de suppression d'une relation #}
+<div class="modal fade" id="modal_delete_relation" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Je supprime ce membre</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <img src="{{ asset('img/picto/picto_heart.svg') }}" class="my-2" alt="logo Sheepi" width="80px">
+                    <p class="text-center mt-2"><strong>Quels dommage que ce membre ne vous convienne pas.</strong></p>
+                    <p class="paragraphe_modal mx-4">
+                        Afin de mieux comprendre nos membres, pourriez-vous non dire ce qu'il ne vous a pas plu dans son profil ?
+                    </p>
+                    <div class="divider_violet my-3"></div>
+                    <div class="col-lg-10 mt-3">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Unchecked">
+                            <label class="custom-control-label" for="Unchecked">Sa situation</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Unchecked1">
+                            <label class="custom-control-label" for="Unchecked1">Sa personnalité</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Unchecked2">
+                            <label class="custom-control-label" for="Unchecked2">Son physique</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Unchecked3">
+                            <label class="custom-control-label" for="Unchecked3">Sa localisation</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Unchecked4">
+                            <label class="custom-control-label" for="Unchecked4">Sa scolarité</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="Unchecked5">
+                            <label class="custom-control-label" for="Unchecked5">Ses passions</label>
+                        </div>
+                        <button type="button" class="btn btn-warning btn-block bloc_btn my-4">
+                            Je supprime ce membre
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Modal inscription interrompu #}
+<div class="modal fade" id="modal_registration_lost" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mx-auto" id="exampleModalLongTitle">Inscription</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-center">
+                    <img src="{{ asset('img/picto/picto_inscription.svg') }}" class="my-2" alt="picto_inscription" width="60px">
+                </div>
+                <p class="text-center mt-2"><strong>Il nous manque encore quelques infos :)</strong></p>
+                <p class="paragraphe_modal mx-4">
+                    Il semblerait que le renseignement de vos champs ait été interrompu. Pour reprendre le fil de l'inscription, 
+                    C'est simple, on vous remet là où vous nous avez laissé ;)
+                    <button type="button" class="btn btn-warning btn-block bloc_btn my-4">
+                        Je reprends mon inscription
+                    </button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# Modal match entre deux membres #}
+<div class="modal fade" id="modal_alert_user_match" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modal_transparent">
+            <h2 class="modal-title mx-auto titre_match">Félicitation !</h2>
+            <div class="modal-body">
+                <p class="text-center mx-4 text_modal_transparent">
+                    Sheepi a le plaisir de vous<br> annoncer que ce membre veut<br>faire connaissance avec vous :)
+                </p>
+                <div class="row justify-content-center">
+                    <img src="{{ asset('img/photo/membre_femme.png') }}" class="my-3 mx-2" alt="logo Sheepi" width="180px">
+                    <img src="{{ asset('img/photo/membre_homme.png') }}" class="my-3 mx-2" alt="logo Sheepi" width="180px">
+                    <button type="button" class="btn btn-warning bloc_btn mt-4">
+                        Je prends ses coordonnées :)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

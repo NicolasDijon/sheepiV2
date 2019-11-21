@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/registration.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    {# Bloc logo Sheepi #}
+    <div class="row justify-content-center">
+        <img src="{{asset('img/picto/logo_sheepi.png')}}" class="img-fluid my-4" alt="Logo Sheepi">
+    </div>
+    {# Bloc image #}
+    <div class="row">
+        <img src="{{asset('img/fond/hero_area_inscription.jpg')}}" class="img-fluid" alt="Banière inscription">
+    </div>
+    {# Bloc étapier #}
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="my-4 text-center titre_inscription">
+                Votre mail est validé ! Maintenant on aimerait que vous nous accordiez <span class="span_minute">5 minutes</span>
+                pour renseigner les infos de votre profil
+            </h5>
+            <div class="row justify-content-center mb-4">
+                <img src="{{ asset('img/picto/picto_etapes_situation_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_physique_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_bleu"></div>
+                <img src="{{ asset('img/picto/picto_etapes_perso_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_bleu"></div>
+                <img src="{{ asset('img/picto/picto_etapes_passion_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_bleu"></div>
+                <img src="{{ asset('img/picto/picto_etapes_reglages_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+            </div>
+        </div>
+    </div>
+    {# Bloc formulaire #}
+    <div class="row no-padding">
+        <div class="col-lg-6 mb-4">
+            <div class="bloc_user">
+                <p class="text-center py-2 paragraphe_inscription">Ma situation</p>
+            </div>
+            <div class="col-lg-7 col-md-7 my-4 mx-auto">
+                {{ form_start(form)}}
+                <div class="form-group">
+                    {{ form_label(form.monSexe, 'Mon sexe') }}
+                    {{ form_widget(form.monSexe, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.monSexe) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.monAge, 'Mon âge :') }} <span class="val_mon_age"></span>
+                    {{ form_widget(form.monAge, { 'attr': { 'class': 'custom-range mon_age' } }) }}
+                    {{ form_errors(form.monAge) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.monPays, 'Mon pays') }}
+                    {{ form_widget(form.monPays, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(form.monPays) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.monDepartement, 'Mon département') }}
+                    {{ form_widget(form.monDepartement, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(form.monDepartement) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.maVille, 'Ma ville') }}
+                    {{ form_widget(form.maVille, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(form.maVille) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.monTelephone, 'Mon numéro de téléphone (ex:0622433423)') }}
+                    {{ form_widget(form.monTelephone, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(form.monTelephone) }}
+                </div>
+                <div class="form-group">
+                {{ form_label(form.mesEnfants, 'Mon ou mes enfant(s)') }}
+                    {{ form_widget(form.mesEnfants, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.mesEnfants) }}
+                </div>
+                <div class="form-group">
+                {{ form_label(form.mesOrigines, 'Mes origines') }}
+                    {{ form_widget(form.mesOrigines, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.mesOrigines) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 pb-4" style="background-color: #e8e3ef">
+            <div class="bloc_recherche">
+                <p class="text-center py-2 paragraphe_inscription">Sa situation</p>
+            </div>
+            <div class="col-lg-7 col-md-7 my-4 mx-auto">
+                {{ form_start(form)}}
+                <div class="form-group">
+                    {{ form_label(form.sonSexe, 'Son sexe') }}
+                    {{ form_widget(form.sonSexe, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sonSexe) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sonAge, 'Son âge (choisir un âge minimum) :') }} <span class="val_son_age"></span>
+                    {{ form_widget(form.sonAge, { 'attr': { 'class': 'custom-range son_age' } }) }}
+                    {{ form_errors(form.sonAge) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sonPays, 'Son pays') }}
+                    {{ form_widget(form.sonPays, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(form.sonPays) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesDepartements, 'Son (ou ses) département(s)') }}
+                    {{ form_widget(form.sesDepartements, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesDepartements) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesEnfants, 'Son ou ses enfant(s)') }}
+                    {{ form_widget(form.sesEnfants, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesEnfants) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesOrigines, 'Ses origines') }}
+                    {{ form_widget(form.sesOrigines, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesOrigines) }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning btn-block py-3 bloc_btn">Je passe à la suite :)</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}

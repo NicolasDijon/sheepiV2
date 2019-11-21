@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/registration.css') }}">
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    {# Bloc logo Sheepi #}
+    <div class="row justify-content-center">
+        <img src="{{asset('img/picto/logo_sheepi.png')}}" class="img-fluid my-4" alt="Logo Sheepi">
+    </div>
+    {# Bloc image #}
+    <div class="row">
+        <img src="{{asset('img/fond/hero_area_inscription.jpg')}}" class="img-fluid" alt="Banière inscription">
+    </div>
+    {# Bloc étapier #}
+    <div class="row">
+        <div class="col-lg-12">
+        <h5 class="my-4 text-center titre_inscription ">La personnalité retient...</h5>
+            <div class="row justify-content-center mb-4">
+                <img src="{{ asset('img/picto/picto_etapes_situation_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_physique_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_perso_orange.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_orange"></div>
+                <img src="{{ asset('img/picto/picto_etapes_passion_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+                <div class="ligne_bleu"></div>
+                <img src="{{ asset('img/picto/picto_etapes_reglages_bleu.svg') }}" width=" 60px" class="picto_etapier" alt="Image étapier">
+            </div>
+        </div>
+    </div>
+    {# Bloc formulaire #}
+    <div class="row no-padding">
+        <div class="col-lg-6 pb-4">
+            <div class="bloc_user">
+                <p class="text-center py-2 paragraphe_inscription">Ma personnalité</p>
+            </div>
+            <div class="col-lg-7 col-md-7 my-4 mx-auto">
+                {{ form_start(form)}}
+                <div class="form-group">
+                    {{ form_label(form.monNiveauEtude, "Mon niveau d'étude") }}
+                    {{ form_widget(form.monNiveauEtude, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.monNiveauEtude) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.monJob, 'Mon job') }}
+                    {{ form_widget(form.monJob, { 'attr': { 'class': 'form-control' } }) }}
+                    {{ form_errors(form.monJob) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.monCaractere, 'Mon caractère (5 choix maximum)') }}
+                    {{ form_widget(form.monCaractere, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.monCaractere) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.mesConvictionsSpirituelles, 'Mes convictions spirituelles') }}
+                    {{ form_widget(form.mesConvictionsSpirituelles, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.mesConvictionsSpirituelles) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.mesPetitesAddictions, 'Mes petites addictions') }}
+                    {{ form_widget(form.mesPetitesAddictions, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.mesPetitesAddictions) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 pb-4" style="background-color: #e8e3ef">
+            <div class="bloc_recherche">
+                <p class="text-center py-2 paragraphe_inscription">Sa personnalité</p>
+            </div>
+            <div class="col-lg-7 col-md-7 my-4 mx-auto">
+                {{ form_start(form)}}
+                <div class="form-group">
+                    {{ form_label(form.sonNiveauEtude, "Son niveau d'étude") }}
+                    {{ form_widget(form.sonNiveauEtude, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sonNiveauEtude) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sonCaractere, 'Son caractère (5 choix maximum)') }}
+                    {{ form_widget(form.sonCaractere, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sonCaractere) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesConvictionsSpirituelles, 'Ses convictions spirituelles') }}
+                    {{ form_widget(form.sesConvictionsSpirituelles, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesConvictionsSpirituelles) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.sesPetitesAddictions, 'Ses petites addictions') }}
+                    {{ form_widget(form.sesPetitesAddictions, { 'attr': { 'class': 'custom-select' } }) }}
+                    {{ form_errors(form.sesPetitesAddictions) }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning btn-block py-3 bloc_btn">Je passe à la suite :)</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+
+{% endblock %}

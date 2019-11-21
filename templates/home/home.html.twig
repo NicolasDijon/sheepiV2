@@ -1,0 +1,282 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{# Sidenav de connexion #}
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <form class="connexion_form" action="{{ path('security_login') }}" method="post">
+        <h5 class="text-center mt-3 mb-4 h5_connexion">Connexion</h5>
+        <div class="form-group">
+            <input placeholder="Email" required name="_username" type="text" class="form-control text-center">
+        </div>
+        <div class="form-group">
+            <input placeholder="Mot de passe" required name="_password" type="password" class="form-control text-center">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-warning btn-block">Hop ! Je rentre...</button>
+        </div>
+    </form>
+    <div class="text-center mt-4">
+        <a href="">Mot de passe oublié</a>
+    </div>
+</div>
+
+{# Header video #}
+<div id="main">
+    <div class="container-fluid">
+        <div class="row no-padding justify-content-center div_cookies">
+            <p class="my-3 paragraphe_cookies text-center mx-4">En poursuivant votre navigation sur Sheepi, vous
+                acceptez l'utilisation de Cookies afin d'analyser votre navigation et nous permettre de mesurer l'audience de notre site
+                <a href="#" class="btn btn-warning btn-sm my-auto mx-2 btn_cookies">Ça marche...</a>
+            </p>
+        </div>
+    </div>
+    <header>
+        <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="{{asset('video/video_sheepi.mp4')}}" type="video/mp4">
+        </video>
+        <div class="container h-100">
+            <div class="contenu d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white">
+                    <img src="{{asset('img/picto/logo_sheepi_blanc.png')}}" class="logo_sheepi" alt="Logo Sheepi">
+                    <h4 class="mt-2">Oubliez les sites de rencontre<br>et vivez la <span class="font-weight-bold">rélovution</span> !</h4> 
+                    <div class="row justify-content-center mt-4">
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('admin')}}" class="btn btn-primary mt-2 mr-2">Dashboard</a>
+                        <a href="{{ path('security_logout') }}" class="btn btn-warning mt-2 ml-2">Déconnexion</a>
+                        {% else %}
+                        {% if app.user %}
+                        <a href="{{ path('user')}}" class="btn btn-primary mt-2 mr-2">Ma page</a>
+                        <a href="{{ path('security_logout') }}" class="btn btn-warning mt-2">Déconnexion</a>
+                        {% else %}
+                        <a href="#" onclick="openNav()" class="btn btn-primary mt-2 mr-2">Je me connecte</a>
+                        <a href="{{path('security_registration')}}" class="btn btn-warning mt-2 ml-2">Je me lance</a>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {# Header image (image, logo, lien pour créer un compte et se connecter) #}
+    {#<div class="view intro-2" id="ancre_inscription">
+        <div class="full-bg-img">
+            <div class="mask rgba-black-light flex-center">
+                <div class="container text-center ">
+                    <div class="contenu text-center wow fadeInUp">
+                        <img src="{{asset('img/picto/logo_sheepi_blanc.png')}}" class="logo_sheepi" alt="Logo Sheepi">
+                        <h4 class="mt-2">Oubliez les sites de rencontre<br>et vivez la <span class="font-weight-bold">rélovution</span> !</h4> 
+                        <div class="row justify-content-center mt-4">
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <a href="{{ path('admin')}}" class="btn btn-primary mt-2 mr-2">Dashboard</a>
+                            <a href="{{ path('security_logout') }}" class="btn btn-warning mt-2 ml-2">Déconnexion</a>
+                            {% else %}
+                            {% if app.user %}
+                            <a href="{{ path('security_logout') }}" class="btn btn-warning mt-2">Déconnexion</a>
+                            {% else %}
+                            <a href="#" onclick="openNavConnexion()" class="btn btn-primary mt-2 mr-2">Je me connecte</a>
+                            <a href="{{path('security_registration')}}" class="btn btn-warning mt-2 ml-2">Je me lance</a>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>#}
+
+    {# Container avec les trois bloc de présentation #}
+    <div class="container-fluid" style="background-color: #f1edf6">
+        <div class="row no-padding" style="background-color: white">
+            <div class="col-lg-6 col-xl-6">
+                <h2 class="text-center title_home my-5">Déçu(e)s des sites de rencontre ?<br>Vous êtes au bon endroit :)</h2>
+                <p class="paragraphe_home my-4">Quand on sait que <span class="span_83">83%</span> des célibataires inscrits sur les 
+                    sites de rencontre n'arrivent pas à se mettre en couple de manière très sérieuse, on est en droit de douter de l'éfficacité 
+                    de ces plateformes.<br><br>
+                    Chez Sheepi, on pense que c'est à cause de la culture de zapping, de la socièté de consommation et des sites de rencontre 
+                    catalogue. Du coup, on propose une solution qui pourrait réconcilier les célibataires déçus en leur proposant un facilitateur 
+                    de rencontre qui leur redonnera espoir dans leur quête de l'amour durable. C'est dans l'air du temps, il est important de 
+                    mieux manger, mieux se soigner et... mieux se rencontrer.
+                </p>
+            </div>
+            <div class="col-lg-6 col-xl-6">
+                <img src="{{asset('img/fond/bloc1.png')}}" alt="Image femme zen tablette" class="img-fluid float-right">
+            </div>
+            {# Div desktop #}
+            <div class="col-lg-6 col-xl-6 bloc_desktop">
+                <img src="{{asset('img/fond/bloc2.png')}}" alt="Image femme zen" class="img-fluid">
+            </div>
+            <div class="col-lg-6 col-xl-6">
+                <h2 class="text-center title_home my-5">Probablement le facilitateur de rencontre<br>le plus simple du monde :)</h2>
+                <p class="paragraphe_home my-4">Chez Sheepi, c'est simple... Vous n'avez rien à faire ! Plus besoin de chercher la perle 
+                    rare pendant des heures, on la trouve pour vous. Alors, amusez-vous et profitez de votre temps libre.<br><br>
+                    Mais pour que ça marche, on vous demandera de nous offrir 5 minutes de votre temps pour nous dire qui vous êtes et qui
+                    vous voulez rencontrer. Grâce à la data science et à notre astucieux algorythme, Sheepi est en mesure de vous proposez
+                    jusqu'à 3 profils maximum par semaine en phase avec ce que vous cherchez et réciproquement qui vous recherche. Chez nous
+                    , la qualité prime sur la quantité.
+                </p>
+            </div>
+            {# Div mobile #}
+            <div class="col-lg-6 col-xl-6 bloc_mobile">
+                <img src="{{asset('img/fond/bloc2.png')}}" alt="Image couple" class="img-fluid">
+            </div>
+            <div class="col-lg-6 col-xl-6">
+                <h2 class="text-center title_home my-5">10 bonnes raisons<br>de s'inscrire sur Sheepi</h2>
+                <p class="paragraphe_home my-4">
+                    <i class="fas fa-check mr-3"></i> Sheepi est moderne, simple et très intuitif.<br>
+                    <i class="fas fa-check mr-3"></i> Vous n'avez aucune recherche à faire.<br>
+                    <i class="fas fa-check mr-3"></i> Les profils proposés répondent avec précision à votre recherche.<br>
+                    <i class="fas fa-check mr-3"></i> Vous ne recevrez que 3 contacts par semaine (la qualité à la quantité).<br>
+                    <i class="fas fa-check mr-3"></i> La mise en contact est directe par mail ou par téléphone (pas de chat).<br>
+                    <i class="fas fa-check mr-3"></i> Pas de faux profils, de spam ou autres fantaisies mensongères.<br>
+                    <i class="fas fa-check mr-3"></i> Vos données personnelles ne seront pas revendues.<br>
+                    <i class="fas fa-check mr-3"></i> Sheepi n'accepte aucune publicité sur sa plateforme.<br>
+                    <i class="fas fa-check mr-3"></i> Au bout de 3 signalements, les membres perturbateurs sont bannis du site.<br>
+                    <i class="fas fa-check mr-3"></i> Pour finir, cerise sur le gateau, <span class="span_cerise">Sheepi est gratuit jusqu'au 1er 
+                        Mars 2021.<br>
+                </p>
+            </div>
+            <div class="col-lg-6 col-xl-6">
+                <img src="{{asset('img/fond/bloc3.png')}}" alt="Image couple" class="img-fluid float-right">
+            </div>
+        </div>
+
+        {# Bloc testimoniaux #}
+        <section class="team-section text-center mb-5">
+            <h2 class="h1-responsive my-5 title_home">Quelques avis sympa à partager :)</h2>
+            <div class="row text-center justify-content-center">
+                <div class="col-md-3 mb-md-0 mb-5">
+                    <div class="testimonial">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg" class="rounded-circle z-depth-1 img-fluid" 
+                                alt="Image utilisateur">
+                        </div>
+                        <h4 class="testimonial_nom mt-4">Anna Deynah</h4>
+                        <h6 class="testimonial_job my-3">Web Designer</h6>
+                        <p class="font-weight-normal testimonial_paragraphe mx-2">
+                            <i class="fas fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
+                                eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+                        </p>
+                        <div class="orange-text">
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star-half-alt"> </i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 mb-md-0 mb-5">
+                    <div class="testimonial">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" class="rounded-circle z-depth-1 img-fluid" 
+                                alt="Image utilisateur">
+                        </div>
+                        <h4 class="testimonial_nom mt-4">John Doe</h4>
+                        <h6 class="testimonial_job my-3">Web Developer</h6>
+                        <p class="font-weight-normal testimonial_paragraphe mx-2">
+                            <i class="fas fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem ullam
+                                corporis suscipit laboriosam, nisi ut aliquid commodi.
+                        </p>
+                        <div class="orange-text">
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="testimonial">
+                        <div class="avatar mx-auto">
+                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" class="rounded-circle z-depth-1 img-fluid" 
+                                alt="Image utilisateur">
+                        </div>
+                        <h4 class="testimonial_nom mt-4">Maria Kate</h4>
+                        <h6 class="testimonial_job my-3">Photographer</h6>
+                        <p class="font-weight-normal testimonial_paragraphe mx-2">
+                            <i class="fas fa-quote-left pr-2"></i>At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                blanditiis praesentium voluptatum deleniti atque corrupti.
+                        </p>
+                        <div class="orange-text">
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="fas fa-star"> </i>
+                            <i class="far fa-star"> </i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        {# Bloc paiement #}
+        <div class="row">
+            <div class="col-lg-12 bloc_paiement text-center">
+                <p class="text-center mt-4 paragraphe_paiement">Bien évidement, nos paiements sont sécurisés</p>
+                <div class="justify-content-center mb-4">
+                    <img src="{{asset('img/picto/logo_cb.svg')}}" alt="Image paiement" class="img-fluid mx-2 picto_paiement" width="60px">
+                    <img src="{{asset('img/picto/logo_mastercard.svg')}}" alt="Image paiement" class="img-fluid mx-2 picto_paiement" width="36px">
+                    <img src="{{asset('img/picto/logo_visa.svg')}}" alt="Image paiement" class="img-fluid mx-2 picto_paiement" width="65px">
+                    <img src="{{asset('img/picto/logo_paypal.svg')}}" alt="Image paiement" class="img-fluid mx-2 picto_paiement" width="90px">
+                </div>
+            </div>
+        </div>
+
+        {# Bloc inscription #}
+        <div class="row"  style="background-color: white">
+            <div class="col-lg-12 footer_inscription text-center">
+                <a class="btn btn-warning btn-lg mt-5 px-5" href="{{path('security_registration')}}">Allez... Je me lance !</a>
+            </div>
+        </div>
+
+        {# Bloc footer (liens du site et réseaux sociaux) #}
+        <div class="row"  style="background-color: white">
+            <div class="col-lg-12 footer text-center mt-5">
+                <a href="{{ path('home_sheepi') }}" class="lien_footer">Sheepi </a>-
+                <a href="{{ path('home_faq') }}" class="lien_footer">Foire aux questions </a>-
+                <a href="{{ path('home_mentions') }}" class="lien_footer">Mentions légales </a>-
+                <a href="{{ path('home_contact') }}" class="lien_footer"> Contact</a>
+            </div>
+        </div>
+        <div class="row justify-content-center pt-4 mb-4" style="background-color: white">
+            <a href="#" class="lien_reseaux"><img src="{{asset('img/picto/logo_facebook.svg')}}" width="40px"></a>
+            <a href="#" class="lien_reseaux mx-3"><img src="{{asset('img/picto/logo_youtube.svg')}}" width="40px"></a>
+            <a href="#" class="lien_reseaux"><img src="{{asset('img/picto/logo_instagram.svg')}}" width="40px"></a>
+        </div>
+    </div>
+</div>
+
+    {# Bouton modals pour voir le visuel (à retirer apres intégration) #}
+    {{ include('modals/modals.html.twig') }}
+
+    <div class="my-5">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_delete_account">
+        Supprimer compte
+    </button>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_delete_account_confirm">
+        Confirmation suppression de  compte
+    </button>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_registration_lost">
+        Inscription interrompu
+    </button>
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_alert_user_again">
+        Membre déjà signalé
+    </button>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+

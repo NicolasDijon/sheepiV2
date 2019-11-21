@@ -1,0 +1,46 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/sidenav_user.css') }}">
+{% endblock %}
+
+{# Sidenav du compte utilisateur #}
+<div class="sidenav">
+    <div class="row justify-content-center">
+        <a href="{{ path('home') }}"><img src="{{ asset('img/picto/logo_sheepi.png') }}" class="nav_logo" alt="Logo Sheepi" width="70px"></a>
+    </div>
+    <div class="bloc_nav text-center mt-4">
+        <a href="{{ path('user') }}" class="nav_lien">
+            <img width="26px" height="32px" src="{{ asset('img/picto/btn_ma_page.svg') }}" alt="Ma page">
+            <p class="menu">Ma page</p>
+        </a>
+    </div>
+    <div class="bloc_nav text-center">
+        <a href="{{ path('user_infos_situation') }}" class="nav_lien">
+            <img width="26px" height="32px" src="{{ asset('img/picto/btn_mes_infos.svg') }}" alt="Mes infos">
+            <p class="menu">Mes infos</p>
+        </a>
+    </div>
+    <div class="bloc_nav text-center">
+        <a href="{{ path('user_resultats') }}" class="nav_lien">
+            <img width="26px" height="32px" src="{{ asset('img/picto/btn_mes_resultats.svg') }}" alt="Mes résultats">
+            <p class="menu">Mes résultats</p>
+        </a>
+    </div>
+
+    {# Footer #}
+    <div class="footer pb-4">
+        <div class="text-center">
+            <a href="{{ path('home_sheepi') }}" class="lien_footer">Sheepi</a><br>
+            <a href="{{ path('home_faq') }}" class="lien_footer">FAQ</a><br>
+            <a href="{{ path('home_mentions') }}" class="lien_footer">CGU</a><br>
+            <a href="{{ path('home_contact') }}" class="lien_footer">Contact</a><br>
+        </div>
+        <div class="row justify-content-center mt-2">
+            <a href="#" class="lien_reseaux"><img src="{{asset('img/picto/logo_facebook.svg')}}" width="25px" alt="Picto réseaux"></a>
+            <a href="#" class="lien_reseaux mx-1"><img src="{{asset('img/picto/logo_youtube.svg')}}" width="25px" alt="Picto réseaux"></a>
+            <a href="#" class="lien_reseaux"><img src="{{asset('img/picto/logo_instagram.svg')}}" width="25px" alt="Picto réseaux"></a>
+        </div>
+        </div>
+    </div>
+</div>
+
+

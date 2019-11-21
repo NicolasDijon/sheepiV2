@@ -1,0 +1,30 @@
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/navbar_mobile.css') }}">
+{% endblock %}
+
+{# Navbar mobile #}
+<div class="navbar_mobile fixed-bottom">
+    <div class="row">
+        <div class="col bloc_nav_mobile text-center">
+            <a href="{{ path('user') }}" class="nav_lien mb-2">
+                <img width="26px" src="{{ asset('img/picto/btn_ma_page.svg') }}" alt="Ma page">
+            </a>
+        </div>
+        <div class="col bloc_nav_mobile text-center">
+            <a href="{{ path('user_infos_situation') }}" class="nav_lien mb-2">
+                <img width="26px" src="{{ asset('img/picto/btn_mes_infos.svg') }}" alt="Mes infos">
+            </a>
+        </div>
+        <div class="col bloc_nav_mobile text-center">
+            <a href="{{ path('user_resultats') }}" class="nav_lien mb-2">
+                <img width="26px" src="{{ asset('img/picto/btn_mes_resultats.svg') }}" alt="Mes résultats">
+            </a>
+        </div>
+        <div class="col-lg-12 text-center footer_mobile pt-4 pb-2">
+            <a href="{{ path('home_sheepi') }}" class="lien_footer_mobile">Sheepi </a><span class="tiret">-</span>
+            <a href="{{ path('home_faq') }}" class="lien_footer_mobile">Foire aux questions </a><span class="tiret">-</span>
+            <a href="{{ path('home_mentions') }}" class="lien_footer_mobile">Mentions légales </a><span class="tiret">-</span>
+            <a href="{{ path('home_contact') }}" class="lien_footer_mobile"> Contact</a>
+        </div>
+    </div>
+</div>
