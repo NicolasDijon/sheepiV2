@@ -82,10 +82,17 @@ class User implements UserInterface
      */
     private $reglage;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="user", orphanRemoval=true)
+     * @Assert\Valid()
+     */
+    private $images;
+
     public function __construct() {
         $this->isActive = true;
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid('', true));
+        $this->images = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -213,6 +220,35 @@ class User implements UserInterface
     {
         $this->reglage = $reglage;
 
+        return $this;
+    }
+
+    /**
+     * @return Collection|Image[]
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images[] = $image;
+            $image->setUser($this);
+        }
+        return $this;
+    }
+
+    public function removeImage(Image $image): self
+    {
+        if ($this->images->contains($image)) {
+            $this->images->removeElement($image);
+            // set the owning side to null (unless already changed)
+            if ($image->getUser() === $this) {
+                $image->setUser(null);
+            }
+        }
         return $this;
     }
 }

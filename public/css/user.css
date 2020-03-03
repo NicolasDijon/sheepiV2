@@ -1,9 +1,17 @@
+body{
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Asap', sans-serif;
+}
+
 .title_nom{
     color: white;
 }
 
 .bg_infos{
-    background-color: white;
+    background-color: #eff1ff ;
 }
 
 .paragraphe_infos{
@@ -94,7 +102,7 @@
     border-radius: 0%;
 }
 
-.card:hover{
+.zoom:hover{
     /* L'image est grossie de 25% */
     -webkit-transform:scale(1.05); /* Safari et Chrome */
     -moz-transform:scale(1.05); /* Firefox */

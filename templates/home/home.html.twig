@@ -26,10 +26,14 @@
 <div id="main">
     <div class="container-fluid">
         <div class="row no-padding justify-content-center div_cookies">
+            <div class="col-lg-12">
             <p class="my-3 paragraphe_cookies text-center mx-4">En poursuivant votre navigation sur Sheepi, vous
                 acceptez l'utilisation de Cookies afin d'analyser votre navigation et nous permettre de mesurer l'audience de notre site
-                <a href="#" class="btn btn-warning btn-sm my-auto mx-2 btn_cookies">Ça marche...</a>
             </p>
+            </div>
+            <div class="col-lg-12 text-center mb-3">
+                <a href="#" class="btn btn-warning btn-sm my-auto mx-2 btn_cookies">Ça marche...</a>
+            </div>
         </div>
     </div>
     <header>
@@ -57,6 +61,7 @@
                         {% endif %}
                         {% endif %}
                     </div>
+                    <p class="mt-4">Scroller ! <br> On vous en dit plus ! <br> <i class="fas fa-angle-down fa-3x"></i></p>
                 </div>
             </div>
         </div>
@@ -92,7 +97,56 @@
     {# Container avec les trois bloc de présentation #}
     <div class="container-fluid" style="background-color: #f1edf6">
         <div class="row no-padding" style="background-color: white">
-            <div class="col-lg-6 col-xl-6">
+            <div class="col-xl-8 col-md-8 mx-auto">
+                <h2 class="text-center title_home my-5">Déçu(e)s des sites de rencontre ? Vous êtes au bon endroit :)</h2>
+                <p class="paragraphe_home my-4">Quand on sait que <span class="span_83">83%</span> des célibataires inscrits sur les 
+                    sites de rencontre n'arrivent pas à se mettre en couple de manière très sérieuse, on est en droit de douter de l'éfficacité 
+                    de ces plateformes.<br><br>
+                    Chez Sheepi, on pense que c'est à cause de la culture de zapping, de la socièté de consommation et des sites de rencontre 
+                    catalogue. Du coup, on propose une solution qui pourrait réconcilier les célibataires déçus en leur proposant un facilitateur 
+                    de rencontre qui leur redonnera espoir dans leur quête de l'amour durable. C'est dans l'air du temps, il est important de 
+                    mieux manger, mieux se soigner et... mieux se rencontrer.
+                </p>
+                <img src="{{asset('img/fond/sheepi_profils_compatibles.jpg')}}" alt="Image profils compatibles" class="img-fluid" width="100%">
+                <p class="text-center paragraphe_home_micro mt-4 mb-5">* Étude IFOP - Ces sites ne contribuent pas à la formation de couples durables si l’on en juge par le 
+                    peu d’utilisateurs (17%) <br> ayant eu une relation suffisamment longue pour aboutir à la signature d’un PACS ou d’un mariage.
+                </p>
+            </div>
+        </div>
+        <div class="row no-padding">
+            <div class="col-xl-8 col-md-8 mx-auto">
+                <h2 class="text-center title_home my-5">Probablement le facilitateur de rencontre le plus simple du monde :)</h2>
+                <p class="paragraphe_home my-4">Chez Sheepi, c'est simple... Vous n'avez rien à faire ! Plus besoin de chercher la perle 
+                    rare pendant des heures, on la trouve pour vous. Alors, amusez-vous et profitez de votre temps libre.<br><br>
+                    Mais pour que ça marche, on vous demandera de nous offrir 5 minutes de votre temps pour nous dire qui vous êtes et qui
+                    vous voulez rencontrer. Grâce à la data science et à notre astucieux algorythme, Sheepi est en mesure de vous proposez
+                    jusqu'à 3 profils maximum par semaine en phase avec ce que vous cherchez et réciproquement qui vous recherche. Chez nous
+                    , la qualité prime sur la quantité.
+                </p>
+            </div>
+            <img src="{{asset('img/fond/sheepi_cliquez_on_vous_explique_tout.jpg')}}" alt="Image on vous explique tout" class="img-fluid" width="100%">
+        </div>
+        <div class="row no-padding">
+            <div class="col-xl-6 col-md-6 mx-auto">
+                <h2 class="text-center title_home my-5">10 bonnes raisons de s'inscrire sur Sheepi</h2>
+                <p class="paragraphe_home mt-4 mb-5">
+                    <i class="fas fa-check mr-3"></i> Sheepi est moderne, simple et très intuitif.<br>
+                    <i class="fas fa-check mr-3"></i> Vous n'avez aucune recherche à faire.<br>
+                    <i class="fas fa-check mr-3"></i> Les profils proposés répondent avec précision à votre recherche.<br>
+                    <i class="fas fa-check mr-3"></i> Vous ne recevrez que 3 contacts par semaine (la qualité à la quantité).<br>
+                    <i class="fas fa-check mr-3"></i> La mise en contact est directe par mail ou par téléphone (pas de chat).<br>
+                    <i class="fas fa-check mr-3"></i> Pas de faux profils, de spam ou autres fantaisies mensongères.<br>
+                    <i class="fas fa-check mr-3"></i> Vos données personnelles ne seront pas revendues.<br>
+                    <i class="fas fa-check mr-3"></i> Sheepi n'accepte aucune publicité sur sa plateforme.<br>
+                    <i class="fas fa-check mr-3"></i> Au bout de 3 signalements, les membres perturbateurs sont bannis du site.<br>
+                    <i class="fas fa-check mr-3"></i> Pour finir, cerise sur le gateau, <span class="span_cerise">Sheepi est gratuit jusqu'au 1er 
+                        Mars 2021.<br>
+                </p>
+            </div>
+            <img src="{{asset('img/fond/sheepi_couple.jpg')}}" alt="Image couple" class="img-fluid" width="100%">
+        </div>
+                
+            {#<div class="col-lg-6 col-xl-6">
                 <h2 class="text-center title_home my-5">Déçu(e)s des sites de rencontre ?<br>Vous êtes au bon endroit :)</h2>
                 <p class="paragraphe_home my-4">Quand on sait que <span class="span_83">83%</span> des célibataires inscrits sur les 
                     sites de rencontre n'arrivent pas à se mettre en couple de manière très sérieuse, on est en droit de douter de l'éfficacité 
@@ -105,9 +159,9 @@
             </div>
             <div class="col-lg-6 col-xl-6">
                 <img src="{{asset('img/fond/bloc1.png')}}" alt="Image femme zen tablette" class="img-fluid float-right">
-            </div>
+            </div>#}
             {# Div desktop #}
-            <div class="col-lg-6 col-xl-6 bloc_desktop">
+            {#<div class="col-lg-6 col-xl-6 bloc_desktop">
                 <img src="{{asset('img/fond/bloc2.png')}}" alt="Image femme zen" class="img-fluid">
             </div>
             <div class="col-lg-6 col-xl-6">
@@ -119,9 +173,9 @@
                     jusqu'à 3 profils maximum par semaine en phase avec ce que vous cherchez et réciproquement qui vous recherche. Chez nous
                     , la qualité prime sur la quantité.
                 </p>
-            </div>
+            </div>#}
             {# Div mobile #}
-            <div class="col-lg-6 col-xl-6 bloc_mobile">
+            {#<div class="col-lg-6 col-xl-6 bloc_mobile">
                 <img src="{{asset('img/fond/bloc2.png')}}" alt="Image couple" class="img-fluid">
             </div>
             <div class="col-lg-6 col-xl-6">
@@ -142,8 +196,7 @@
             </div>
             <div class="col-lg-6 col-xl-6">
                 <img src="{{asset('img/fond/bloc3.png')}}" alt="Image couple" class="img-fluid float-right">
-            </div>
-        </div>
+            </div>#}
 
         {# Bloc testimoniaux #}
         <section class="team-section text-center mb-5">

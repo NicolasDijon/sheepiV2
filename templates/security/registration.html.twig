@@ -8,7 +8,7 @@
         <a href="{{ path('home') }}"><img src="{{asset('img/picto/logo_sheepi.png')}}" class="img-fluid my-4" alt="Logo Sheepi"></a>
     </div>
     {# Div background-image #}
-    <div class="row bg">
+    <div class="row bgImg">
         <div class="col-lg-12">
             <h2 class="text-center py-5 title_registration">Petit moment d'inscription</h2>
         </div>
@@ -25,7 +25,7 @@
                 {{ form_widget(form.email, { 'attr': { 'class': 'form-control' } }) }}
             </div>
             <div class="form-group">
-                {{ form_label(form.password, 'Je choisis un mot de passe') }}
+                {{ form_label(form.password, 'Je choisis un mot de passe (8 caractères minimum)') }}
                 {{ form_widget(form.password, { 'attr': { 'class': 'form-control' } }) }}
             </div>
             <div class="form-group">

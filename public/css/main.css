@@ -1,4 +1,12 @@
 /* Normalize */
+body{
+    font-family: 'PT Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Asap', sans-serif;
+}
+
 .no-padding > [class*='col-']{
     padding-right:0;
     padding-left:0;
@@ -156,7 +164,7 @@ header,
     z-index: 1; 
     top: 0; 
     left: 0;
-    background-color: #0a0233;
+    background-color: #eeebfc;
     overflow-x: hidden; 
     padding-top: 60px; 
     transition: 0.5s;
@@ -168,7 +176,7 @@ header,
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
-    color: white;
+    color: black;
 }
 
 #main{
@@ -191,7 +199,7 @@ header,
 }
 
 .h5_connexion{
-    color: white;
+    color: #977ac3;
 }
 
 /* Home page */
@@ -338,7 +346,7 @@ header .overlay{
     background-color: black;
 }
 
-.bg{
+.bgImg{
     background-image: url("../img/fond/background_inscription.jpg");
     height: 100%;
     background-position: center;
@@ -356,6 +364,10 @@ header .overlay{
 
 .lien_conditions:hover{
     color: black;
+}
+
+.paragraphe_home_micro{
+    font-size: 10px;
 }
 
 /* Média queries pour les tablettes et mobile */
@@ -381,6 +393,11 @@ header .overlay{
 
     .lien_inscription{
         font-size: 22px;
+    }
+    
+    .bgImg{
+        background-image: none;
+        background-color: #eceaf8;
     }
 }
 

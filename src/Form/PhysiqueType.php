@@ -27,7 +27,7 @@ class PhysiqueType extends AbstractType
                     'Normale' => 'Normale',
                     'Pulpeuse' => 'Pulpeuse',
                     'Ronde' => 'Ronde',
-                ],
+                ]
             ]))
             ->add('mesCheveux', ChoiceType::class, ([
                 'choices'  => [
