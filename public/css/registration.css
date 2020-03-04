@@ -238,6 +238,10 @@ input[type=range].custom-range::-moz-range-thumb{
     color: white;
 }
 
+.nav_logo{
+    margin: -7px 0px -8px 0px !important;
+}
+
 @media (max-width: 767px){
     .ligne_bleu{
         height: 4px;
@@ -268,6 +272,10 @@ input[type=range].custom-range::-moz-range-thumb{
 
 @media (min-width: 992px){
     .navbar_mobile{
+        display: none;
+    }
+
+    .logo_mobile{
         display: none;
     }
 }
